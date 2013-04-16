@@ -1,0 +1,29 @@
+<?php
+$title = 'My student';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('sis', array('action'=>'addstudent'));?>">Add new student</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Address</th>
+    <th>Mobile Number</th>
+</tr>
+<?php foreach ($students as $student) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($student->name);?></td>
+    <td><?php echo $this->escapeHtml($student->artist);?></td>
+    <td>
+        <a href="<?php echo $this->url('student',
+            array('action'=>'edit', 'id' => $student->id));?>">Edit</a>
+        <a href="<?php echo $this->url('student',
+            array('action'=>'delete', 'id' => $student->id));?>">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

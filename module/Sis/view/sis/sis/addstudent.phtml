@@ -1,0 +1,18 @@
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('student'));
+$form->prepare();
+
+echo $this->form()->openTag($form) . PHP_EOL;
+
+echo $this->formLabel($form->get('fname')) . PHP_EOL;
+echo $this->formInput($form->get('fname')) . PHP_EOL;
+echo $this->FormElementErrors($form->get('fname')) . PHP_EOL;
+
+echo $this->formLabel($form->get('lname')) . PHP_EOL;
+echo $this->formInput($form->get('lname')) . PHP_EOL;
+echo $this->FormElementErrors($form->get('lname')) . PHP_EOL;
+
+echo $this->formSubmit($form->get('submit')) . PHP_EOL;
+
+echo $this->form()->closeTag($form) . PHP_EOL;
